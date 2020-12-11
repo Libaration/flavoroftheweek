@@ -76,7 +76,9 @@ div ul {
   z-index: 2;
   top: -200px;
   position: relative;
-  mix-blend-mode: luminosity;
+  //mix-blend-mode: hard-light;
+  opacity: 0.8;
+  filter: saturate(2.2);
   margin-bottom: -100px;
   text-shadow: 1px 5px 5px #000000;
 }
