@@ -10,6 +10,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'rspotify'
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
+gem 'pry'
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
