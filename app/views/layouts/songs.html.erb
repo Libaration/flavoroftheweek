@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Flavor of The Week : <%= @song.title %> - <%= @song.artist %></title>
+  <title>Flavor of The Week <%= ": #{@song.title} - #{@song.artist}" if @song.title.present? %></title>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;500&display=swap" rel="stylesheet">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
