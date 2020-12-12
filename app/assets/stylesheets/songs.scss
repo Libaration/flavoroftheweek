@@ -12,8 +12,9 @@ body {
           );
   background-color: #00b3fe;
   color: white;
-  font-family: 'Raleway', sans-serif;
+  font-family: Montserrat;
   font-weight: 200;
+  letter-spacing: -0.4px;
 }
 video {
   object-fit: cover;
@@ -97,4 +98,7 @@ div ul {
 }
 .songRow:nth-child(even) {
   background-color: #9F838C;
+}
+h2.artist {
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.8));
 }
