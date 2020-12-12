@@ -1,0 +1,142 @@
+// Place all the styles related to the Static controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+  margin: 0;
+}
+a{
+  color: inherit;
+  text-decoration: inherit;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+a:hover {
+  box-shadow: 20px 50px 100px cyan;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  animation-name: sideswipe;
+  animation-duration: 0.25s;
+  border-left: 15px solid cyan;
+  padding-left: 10px;
+}
+html {
+  background: url('background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  position: absolute;
+  background-size: cover;
+  background-position-y: 70%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+}
+.containerone {
+  display: grid;
+  grid-template-columns: 40px 50px auto 50px 40px;
+  grid-template-rows: 25% 100px auto;
+  width: 100vw;
+  height: 100vh;
+}
+.header {
+  grid-column-start: 3;
+  grid-column-end: five;
+  grid-row-start: row1-start;
+  grid-row-end: 1;
+
+  //filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.8));
+  padding-top: 10px;
+  font-size: 60px;
+  color: rgba(255,255,255,1);
+  letter-spacing: -0.4px;
+
+}
+
+.slogan {
+  margin-top: 100px;
+  grid-column-start: 7;
+  grid-column-end: 7;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.161));
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  color: rgba(255,255,255,1);
+  letter-spacing: -0.4px;
+}
+
+.loginbutton {
+
+  grid-column-start: 7;
+  grid-column-end: 7;
+  grid-row-start: 5;
+  grid-row-end: 5;
+  fill: black;
+  width: 234px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.3));
+  z-index: -1;
+}
+
+.signup {
+
+  padding-top: 10px;
+  padding-left: 30px;
+  grid-column-start: 7;
+  grid-column-end: 7;
+  grid-row-start: 5;
+  grid-row-end: 5;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  color: rgba(255,255,255,1);
+  letter-spacing: -0.4px;
+}
+
+.signinbutton {
+
+  padding-left: 268px;
+  grid-column-start: 7;
+  grid-column-end: 7;
+  grid-row-start: 5;
+  grid-row-end: 5;
+  fill: black;
+  width: 234px;
+  height: 43px;
+  left: 0px;
+  top: 0px;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.3));
+  z-index: -1;
+}
+
+.signin {
+
+  padding-top: 10px;
+  padding-left: 300px;
+  grid-column-start: 7;
+  grid-column-end: 7;
+  grid-row-start: 5;
+  grid-row-end: 5;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  color: rgba(255,255,255,1);
+  letter-spacing: -0.4px;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  z-index: -3;
+}
+
