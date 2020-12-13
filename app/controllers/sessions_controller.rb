@@ -3,14 +3,25 @@ class SessionsController < ApplicationController
     @user = User.new
   end
   def create
-    @user = User.where('email IS ?', params[:user][:email]).first
-    if @user && @user.authenticate(params[:user][:password])
+    if auth
+      @user = User.find_or_create_from_spotify(auth)
       session[:user_id] = @user.id
-      #redirect when i get around to making the model.
-    elsif !@user
-      redirect_to login_path, alert: "User not found"
+      redirect_to root_path
     else
-      redirect_to login_path, alert: "Incorrect password"
+      @user = User.where('email IS ?', params[:user][:email]).first
+      if @user && @user.authenticate(params[:user][:password])
+        session[:user_id] = @user.id
+        redirect_to root_path
+      elsif !@user
+        redirect_to login_path, alert: "User not found"
+      else
+        redirect_to login_path, alert: "Incorrect password"
+      end
     end
+  end
+
+  private
+  def auth
+    request.env['omniauth.auth']
   end
 end
