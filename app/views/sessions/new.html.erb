@@ -1,6 +1,8 @@
 <div class="grid-container">
-  <div id="Sign_up">
-    <span>Sign up</span>
+  <div id="log_in">
+    <span>
+      log in
+    </span>
   </div>
   <div id="user">
     <div id="Group_3">
@@ -17,8 +19,19 @@
     </svg>
   </div>
   <div class="fields">
-    <%= form_for @user do |f|%>
-    <input type="text" name="username"autocomplete="off"/>
+    <% if @user.errors %>
+      <div class="error_messages">
+        <%= @user.errors.full_messages.join(',') %>
+      </div>
+    <% end %>
+    <%= form_for @user , url: "/login", method: :post do |f|%>
+      <%= f.text_field :email, :autocomplete => :off, placeholder: "Email" %><br>
+      <%= f.password_field :password, :autocomplete => :off, placeholder: "Password" %><br>
+      <%= image_submit_tag('enter.png', class: "login-img")%>
     <% end %>
   </div>
+
+  <div class="altsignin">or sign in with</div>
+  <div class="spotify"><%= image_tag('spotify.png') %></div>
+
 </div>
