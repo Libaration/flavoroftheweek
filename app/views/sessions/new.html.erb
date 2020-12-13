@@ -19,11 +19,11 @@
     </svg>
   </div>
   <div class="fields">
-    <% if @user.errors %>
-      <div class="error_messages">
-        <%= @user.errors.full_messages.join(',') %>
-      </div>
-    <% end %>
+        <% flash.each do |type, msg| %>
+          <<div class="error_messages">
+            <%= msg %>
+          </div>
+        <% end %>
     <%= form_for @user , url: "/login", method: :post do |f|%>
       <%= f.text_field :email, :autocomplete => :off, placeholder: "Email" %><br>
       <%= f.password_field :password, :autocomplete => :off, placeholder: "Password" %><br>
