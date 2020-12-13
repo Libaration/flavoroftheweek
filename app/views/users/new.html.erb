@@ -1,6 +1,8 @@
 <div class="grid-container">
   <div id="Sign_up">
-    <span>Sign up</span>
+    <span>
+      Sign up
+    </span>
   </div>
   <div id="user">
     <div id="Group_3">
@@ -17,11 +19,16 @@
     </svg>
   </div>
   <div class="fields">
+    <% if @user.errors %>
+      <div class="error_messages">
+         <%= @user.errors.full_messages.join(',') %>
+      </div>
+    <% end %>
     <%= form_for @user , url: "/signup", method: :post do |f|%>
       <%= f.text_field :email, :autocomplete => :off, placeholder: "Email" %><br>
       <%= f.text_field :name, :autocomplete => :off, placeholder: "Name" %><br>
-      <%= f.text_field :password, :autocomplete => :off, placeholder: "Password" %><br>
-      <%= f.text_field :password_confirmation, :autocomplete => :off, placeholder: "Confirm Password" %><br>
+      <%= f.password_field :password, :autocomplete => :off, placeholder: "Password" %><br>
+      <%= f.password_field :password_confirmation, :autocomplete => :off, placeholder: "Confirm Password" %><br>
       <%= image_submit_tag('enter.png', class: "login-img")%>
     <% end %>
   </div>
