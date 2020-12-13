@@ -1,0 +1,133 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+html {
+  background: url('loginbackground.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position-y: 85%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.field_with_errors {
+  width: 430px;
+  border-bottom: 2px solid red;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  width: 100vw;
+  height: 100vh;
+}
+.LoginBox {
+  grid-column-start: 3;
+  grid-column-end: 7;
+  grid-row-start: 2;
+  grid-row-end: 5;
+}
+#Rectangle_4 {
+  fill: rgba(21,21,21,1);
+}
+.Rectangle_4 {
+  filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.161));
+  overflow: visible;
+  width: 704px;
+  height: 427px;
+  opacity: .9;
+}
+#Sign_up {
+  overflow: visible;
+  width: 74px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  color: rgba(255,255,255,1);
+  letter-spacing: -0.4px;
+  z-index: 1;
+  grid-area: 2 / 4 / 3 / 5;
+  position: relative;
+  padding-top: 15px;
+  padding-left: 50px;
+}
+
+#user {
+  width: 38.203px;
+  height: 38.203px;
+  overflow: visible;
+  grid-area: 2 / 4 / 3 / 5;
+  padding-top: 50px;
+  padding-left: 70px;
+}
+#Group_3 {
+  position: relative;
+  width: 38.203px;
+  height: 38.203px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+  z-index: 1;
+}
+#Path_2 {
+  fill: rgba(255,255,255,1);
+}
+.Path_2 {
+  overflow: visible;
+  position: absolute;
+  width: 38.203px;
+  height: 38.203px;
+  left: 0px;
+  top: 0px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+div.fields {
+  grid-area: 2 / 3 / 3 / 5;
+  z-index: 1;
+  padding-top: 100px;
+  padding-left: 130px;
+}
+div.fields input[type=text], input[type=password] {
+  background-color: rgba(21,21,21,0.0);;
+  color: rgba(144,144,144,1);
+  font-family: inherit;
+  border: none;
+  border-bottom: 2px solid white;
+  width: 426px;
+  height: 30px;
+  opacity: 0.9;
+}
+div.fields input[type=text]:focus, input[type=password]:focus {
+  outline: none;
+  border-bottom: 2px solid pink;
+  transition: all .5s ease-in-out;
+}
+.login-img {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding-left: 450px;
+  padding-top: 10px;
+  transition: all .2s ease-in-out;
+
+}
+.login-img:hover {
+  width: 50px;
+  height: 50px;
+}
+.error_messages {
+  font-family: inherit;
+  color: hotpink;
+  font-weight: normal;
+}
