@@ -61,13 +61,21 @@ li { margin: 0px 20px}
   height: 150px;
   backdrop-filter: brightness(1.6);
   display: flex;
+  transition: .2s ease-in-out;
 }
 .albumart {
   width: 128px;
   height: 128px;
   border-radius: 100px;
   padding: 10px;
-
+  transition: .3s ease-in-out;
+  filter: brightness(1);
+}
+.songcontainer:hover {
+  transform: scale(1.1);
+  .albumart {
+    filter: brightness(1.2);
+  }
 }
 .songcontent {
   flex: 1 1 auto;

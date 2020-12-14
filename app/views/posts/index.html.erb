@@ -12,13 +12,11 @@
   </div>
 
   <div class="songs">
-
     <% Song.all.each do |song| %>
       <div class="songcontainer" style="background-color: <%= dominantcolor(song.image).last %>90;">
         <img src="<%= song.image %>" class="albumart"> <div class="songcontent">Cristian shared <%= "#{song.title} by #{song.artist}" %></div>
       </div>
     <% end %>
-
   </div>
 
 </div>
