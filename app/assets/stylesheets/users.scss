@@ -5,12 +5,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 html {
-  background: url('loginbackground.png') no-repeat center center fixed;
+  background: url('loginbackgroundblur.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position-y: 85%;
+  background-position-y: 70%;
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
@@ -37,6 +37,7 @@ html {
 }
 #Rectangle_4 {
   fill: rgba(21,21,21,1);
+
 }
 .Rectangle_4 {
   filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.161));
