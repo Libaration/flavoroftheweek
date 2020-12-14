@@ -11,12 +11,20 @@
     </div>
   </div>
 
-  <div class="songs">
-    <% Song.all.each do |song| %>
-      <div class="songcontainer" style="background-color: <%= dominantcolor(song.image).last %>90;">
-        <img src="<%= song.image %>" class="albumart"> <div class="songcontent">Cristian shared <%= "#{song.title} by #{song.artist}" %></div>
-      </div>
-    <% end %>
+  <div class="songs" >
+    <%= render partial: 'songs', locals: {songs: Song.all} %>
   </div>
 
 </div>
+
+<script>
+    function play(song_id) {
+        var song=document.getElementById(song_id);
+        song.play();
+    }
+    function stop_playing(song_id) {
+        var song=document.getElementById(song_id);
+        song.pause();
+        song.currentTime = 0;
+    }
+</script>
