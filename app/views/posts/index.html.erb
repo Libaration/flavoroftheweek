@@ -1,15 +1,5 @@
 <div class="grid">
-  <div class="nav-bar">
-    <div class="logo">FlavorOfTheWeek</div>
-    <div class="navlinks">
-      <ul>
-        <li>Profile</li>
-        <li>Search</li>
-        <li>Feed</li>
-        <li>Home</li>
-      </ul>
-    </div>
-  </div>
+  <%= render partial: 'navigation' %>
 
   <div class="songs" >
     <%= render partial: 'songs', locals: {songs: Song.all} %>
@@ -20,6 +10,7 @@
 <script>
     function play(song_id) {
         var song=document.getElementById(song_id);
+        song.muted = false;
         song.play();
     }
     function stop_playing(song_id) {

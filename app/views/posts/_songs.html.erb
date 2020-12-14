@@ -1,6 +1,6 @@
 <% songs.each do |song| %>
 
-  <audio preload="auto" id="song_<%= song.id %>" allow="autoplay">
+  <audio id="song_<%= song.id %>" muted preload="none">
     <source src="<%= song.url %>"></source>
   </audio>
 
@@ -10,7 +10,7 @@
       <img src="<%= song.image %>" class="albumart" id="song_img_<%= song.id %>">
     </div>
     <div class="songcontent">
-      Cristian shared <%= "#{song.title} by #{song.artist}" %>
+      Cristian shared <%= link_to "#{song.title} by #{song.artist}", song_path(song) %>
     </div>
   </div>
 <% end %>
