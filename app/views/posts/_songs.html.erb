@@ -5,6 +5,12 @@
   </audio>
 
   <div class="songcontainer" style="background-color: <%= dominantcolor(song.image).last %>90;">
-    <img onmouseover="play('song_<%= song.id %>')" onmouseout="stop_playing('song_<%= song.id %>')" src="<%= song.image %>" class="albumart" id="song_img_<%= song.id %>"> <div class="songcontent">Cristian shared <%= "#{song.title} by #{song.artist}" %></div>
+    <div class="albumcontainer">
+      <img onmouseover="play('song_<%= song.id %>')" onmouseout="stop_playing('song_<%= song.id %>')"  src="<%= asset_path('play_button.png') %>" id="playbtn">
+      <img src="<%= song.image %>" class="albumart" id="song_img_<%= song.id %>">
+    </div>
+    <div class="songcontent">
+      Cristian shared <%= "#{song.title} by #{song.artist}" %>
+    </div>
   </div>
 <% end %>
