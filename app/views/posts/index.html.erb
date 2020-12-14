@@ -1,1 +1,24 @@
-kednkendksdksn
+<div class="grid">
+  <div class="nav-bar">
+    <div class="logo">FlavorOfTheWeek</div>
+    <div class="navlinks">
+      <ul>
+        <li>Profile</li>
+        <li>Search</li>
+        <li>Feed</li>
+        <li>Home</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="songs">
+
+    <% Song.all.each do |song| %>
+      <div class="songcontainer" style="background-color: <%= dominantcolor(song.image).last %>90;">
+        <img src="<%= song.image %>" class="albumart"> <div class="songcontent">Cristian shared <%= "#{song.title} by #{song.artist}" %></div>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>
