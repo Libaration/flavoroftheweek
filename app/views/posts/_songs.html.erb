@@ -1,21 +1,21 @@
-<% songs.each do |song| %>
+<%# songs.each do |song| %>
   <div class="likebtn">
     <%= image_tag('love.png') %>
   </div>
-  <audio id="song_<%= song.id %>" muted preload="none">
-    <source src="<%= song.url %>"></source>
+  <audio id="song_<%= post.song.id %>" muted preload="none">
+    <source src="<%= post.song.url %>"></source>
   </audio>
-  <div class="songcontainer" style="background-color: <%= dominantcolor(song.image).last %>90;">
+  <div class="songcontainer" style="background-color: <%= dominantcolor(post.song.image).last %>90;">
     <div class="albumcontainer">
-      <img onmouseover="play('song_<%= song.id %>','<%= grab_background(song) %>')" onmouseout="stop_playing('song_<%= song.id %>')"  src="<%= asset_path('play_button.png') %>" id="playbtn">
-      <img src="<%= song.image %>" class="albumart" id="song_img_<%= song.id %>">
+      <img onmouseover="play('song_<%= post.song.id %>','<%= grab_background(post.song) %>')" onmouseout="stop_playing('song_<%= post.song.id %>')"  src="<%= asset_path('play_button.png') %>" id="playbtn">
+      <img src="<%= post.song.image %>" class="albumart" id="song_img_<%= post.song.id %>">
     </div>
     <div class="songcontent">
-      Cristian shared <%= link_to "#{song.title} by #{song.artist}", song_path(song) %>
+      Cristian shared <%= link_to "#{post.song.title} by #{post.song.artist}", song_path(post.song) %>
       <div class="songlinks">
         <%= image_tag('share.png') %>
         <%= image_tag('repost.png') %>
       </div>
     </div>
   </div>
-<% end %>
+<%# end %>

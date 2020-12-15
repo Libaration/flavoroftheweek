@@ -3,7 +3,7 @@
 
 
   <div class="songs" >
-    <%= render partial: 'songs', locals: {songs: Song.all} %>
+    <%= render partial: "songs", collection: @posts, :as => :post %>
   </div>
 
 </div>
