@@ -1,5 +1,10 @@
-<%# songs.each do |song| %>
-  <div class="likebtn">
+<div class="profile_container">
+  <div class="profile_picture">
+    <%= profile_picture_or_default(User.first) %>
+    <div class="greeting">Welcome <%= User.last.name %>, What are you listening to?</div>
+  </div>
+</div>
+<div class="likebtn">
     <%= image_tag('love.png') %>
   </div>
   <audio id="song_<%= post.song.id %>" muted preload="none">
@@ -18,4 +23,3 @@
       </div>
     </div>
   </div>
-<%# end %>

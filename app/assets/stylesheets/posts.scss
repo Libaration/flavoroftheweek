@@ -164,3 +164,18 @@ video {
   filter: brightness(20%) blur(7px);
   transition: .4s ease-in-out;
 }
+.profile_container {
+  text-align: center;
+}
+.profile_picture img {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  padding-bottom: 1em;
+}
+.greeting {
+  padding-bottom: 1em;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 14px;
+}
