@@ -3,6 +3,12 @@
 
 
   <div class="songs" >
+    <div class="profile_container">
+      <div class="profile_picture">
+        <%= profile_picture_or_default(current_user) %>
+        <div class="greeting">Welcome <%= current_user.name %>, What are you listening to?</div>
+      </div>
+    </div>
     <%= render partial: "songs", collection: @posts, :as => :post %>
   </div>
 

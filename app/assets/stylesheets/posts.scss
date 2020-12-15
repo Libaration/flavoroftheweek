@@ -140,11 +140,11 @@ a {
   z-index: -1;
 }
 .songlinks {
-  padding-top: 3em;
-  padding-right: 1em;
-  float: right;
+  padding-left: 55em;
   opacity: 0.1;
   transition: .3s ease-in-out;
+  position: fixed;
+
 }
 .songlinks img {
   z-index: -1;
@@ -178,4 +178,11 @@ video {
   font-weight: bold;
   font-style: italic;
   font-size: 14px;
+}
+.quote {
+  display: inline-block;
+  margin-right: 1em;
+  color: white;
+  font-size: 14px;
+  backdrop-filter: saturate(1);
 }
