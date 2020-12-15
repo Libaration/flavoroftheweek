@@ -6,12 +6,12 @@ class SessionsController < ApplicationController
     if auth
       @user = User.find_or_create_from_spotify(auth)
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to posts_path
     else
       @user = User.where('email IS ?', params[:user][:email]).first
       if @user && @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
-        redirect_to root_path
+        redirect_to posts_path
       elsif !@user
         redirect_to login_path, alert: "User not found"
       else

@@ -1,7 +1,7 @@
 <div class="profile_container">
   <div class="profile_picture">
-    <%= profile_picture_or_default(User.first) %>
-    <div class="greeting">Welcome <%= User.last.name %>, What are you listening to?</div>
+    <%= profile_picture_or_default(current_user) %>
+    <div class="greeting">Welcome <%= current_user.name %>, What are you listening to?</div>
   </div>
 </div>
 <div class="likebtn">
@@ -19,7 +19,7 @@
       Cristian shared <%= link_to "#{post.song.title} by #{post.song.artist}", song_path(post.song) %>
       <div class="songlinks">
         <%= image_tag('share.png') %>
-        <%= image_tag('repost.png') %>
+        <a href="<%= repost_path(post) %>"><%= image_tag('repost.png') %></a>
       </div>
     </div>
   </div>

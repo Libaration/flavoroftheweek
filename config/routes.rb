@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/auth/spotify/callback' => 'sessions#create'
+  get '/songs/:id/repost' => 'posts#repost', as: 'repost'
 end
