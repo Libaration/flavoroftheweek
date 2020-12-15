@@ -7,7 +7,7 @@
   </audio>
   <div class="songcontainer" style="background-color: <%= dominantcolor(song.image).last %>90;">
     <div class="albumcontainer">
-      <img onmouseover="play('song_<%= song.id %>')" onmouseout="stop_playing('song_<%= song.id %>')"  src="<%= asset_path('play_button.png') %>" id="playbtn">
+      <img onmouseover="play('song_<%= song.id %>','<%= grab_background(song) %>')" onmouseout="stop_playing('song_<%= song.id %>')"  src="<%= asset_path('play_button.png') %>" id="playbtn">
       <img src="<%= song.image %>" class="albumart" id="song_img_<%= song.id %>">
     </div>
     <div class="songcontent">
