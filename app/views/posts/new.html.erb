@@ -1,10 +1,3 @@
 <div class="songcontainer">
-  <div class="new_form">
-    <%= form_for @post do |f| %>
-      <%= f.text_field :content, placeholder: 'Message', autocomplete: "off" %>
-      <%= text_field_tag "[song][title]", "", placeholder: 'Title', autocomplete: "off" %>
-      <%= text_field_tag "[song][artist]", "", placeholder: 'Artist', autocomplete: "off" %>
-      <%= f.submit %>
-    <% end %>
-  </div>
+<%= render partial: 'shared/song_form', locals: {post: Post.new} %>
 </div>

@@ -25,13 +25,18 @@ body {
   grid-column-start: 1;
   grid-column-end: 4;
   background-color: #171717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .logo {
   font-size: 40px;
   font-weight: bold;
   padding: .5em;
   padding-left: .9em;
-  float: left;
+  justify-self: left;
+  align-self: flex-start;
+
 }
 ul, ol { padding:0; margin: 0 }
 li { margin: 0px 20px}
@@ -207,4 +212,10 @@ video {
     padding-left: 93em;
     padding-top: 3em;
   }
+}
+
+.nav-search {
+  display: inline-block;
+  align-content: center;
+
 }
