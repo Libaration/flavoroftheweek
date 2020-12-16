@@ -3,6 +3,6 @@ module PostsHelper
     post.original_post.present? ? "<div class=\"contentquote\">\"#{post.content}</div>\"".html_safe : post.content
   end
   def delete_button?(post)
-    link_to image_tag('trash.png'), post, method: :delete, data: {confirm: 'Are you sure?'}, remote: true, class: 'delete_post' if post.user == current_user
+    link_to image_tag('trash.png'), post, method: :delete, remote: true, class: 'delete_post' if post.user == current_user
   end
 end

@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 
   def destroy
       @post = Post.find(params[:id])
-      @post.destroy
+      @post.destroy if current_user == @post.user
     respond_to do |format|
       format.html { redirect_to posts_url }
       format.json { head :no_content }
@@ -26,9 +26,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @posts = Post.all
-    @post = Post.last
-    # @post = current_user.posts.create(content: params[:post][:content], song_hash: search_track("#{params[:song][:title]} #{params[:song][:artist]}"))
+    @post = current_user.posts.create(content: params[:post][:content], song_hash: search_track("#{params[:song][:title]} #{params[:song][:artist]}"))
     respond_to do |format|
       if @post.save
         format.js
