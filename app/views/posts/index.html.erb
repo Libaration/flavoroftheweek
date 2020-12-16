@@ -4,12 +4,13 @@
         <div class="greeting">Welcome <%= current_user.name %>, What are you listening to?</div>
       </div>
     </div>
+ <div id="songpartial">
     <%= render partial: "songs", collection: @posts.order(created_at: :desc), :as => :post %>
-
+ </div>
   <video playsinline autoplay muted loop id="bgvid">
     <source src="" type="video/mp4">
   </video>
-
+ <%#= javascript_pack_tag "#{controller_name}#{action_name}" %>
 <script>
     function play(song_id,song_video) {
         var song = document.getElementById(song_id);

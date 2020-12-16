@@ -1,4 +1,4 @@
- <%= form_for post do |f| %>
+ <%= form_with model: post, remote: true, local: false do |f| %>
     <%= f.text_field :content, placeholder: 'Message', autocomplete: "off" %>
     <%= text_field_tag "[song][title]", "", placeholder: 'Title', autocomplete: "off" %>
     <%= text_field_tag "[song][artist]", "", placeholder: 'Artist', autocomplete: "off" %>
