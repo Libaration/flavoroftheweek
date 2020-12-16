@@ -1,0 +1,4 @@
+var body = document.getElementById('songpartial')
+$(function() {
+    $("#songpartial").hide().html("<%= j render partial: "songs", locals: {post: @post} %>" + body.innerHTML).fadeIn();
+});

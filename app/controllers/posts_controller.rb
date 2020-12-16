@@ -6,9 +6,14 @@ class PostsController < ApplicationController
   end
 
   def repost
-    @post = Post.find(params[:id])
-    Post.create_from_repost(@post, current_user)
-    redirect_to posts_path
+    @post = Post.create_from_repost(Post.find(params[:id]), current_user)
+    respond_to do |format|
+      if @post.save
+        format.js
+      else
+        format.html {redirect_to posts_url}
+      end
+    end
   end
 
   def new

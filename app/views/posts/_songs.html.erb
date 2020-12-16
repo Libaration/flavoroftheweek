@@ -22,7 +22,7 @@
       <div class="songlinks">
         <%= delete_button?(post) %>
         <%= image_tag('share.png') %>
-        <a href="<%= repost_path(post) %>"><%= image_tag('repost.png') %></a>
+        <%= link_to image_tag('repost.png'), repost_path(post), method: :post, remote: true, class: 'repost' %>
       </div>
     </div>
   </div>
