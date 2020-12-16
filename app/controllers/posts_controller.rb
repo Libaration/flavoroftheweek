@@ -15,6 +15,16 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    respond_to do |format|
+      format.html { redirect_to songs_url }
+      format.json { head :no_content }
+      format.js
+    end
+  end
+
   def create
     @post = current_user.posts.create(content: params[:post][:content], song_hash: search_track("#{params[:song][:title]} #{params[:song][:artist]}"))
     redirect_to posts_path

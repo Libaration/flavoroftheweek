@@ -19,6 +19,7 @@
         <div class="quote">originally shared by: <%= post.original_post.user.name %></span></div>
       <% end %>
       <div class="songlinks">
+        <%= delete_button?(post) %>
         <%= image_tag('share.png') %>
         <a href="<%= repost_path(post) %>"><%= image_tag('repost.png') %></a>
       </div>

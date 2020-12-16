@@ -48,6 +48,7 @@ li { margin: 0px 20px}
   grid-column-start: 1;
   grid-column-end: 4;
   padding-top: .9em;
+  margin-left: 5em;
 }
 .navlinks li {
   display: inline-block;
@@ -147,16 +148,18 @@ a {
   z-index: -1;
 }
 .songlinks {
-  padding-left: 55em;
+  margin-left: 20em;
+  margin-top: 1em;
   opacity: 0.1;
   transition: .3s ease-in-out;
   position: fixed;
+  width: 100%;
 
 }
 .songlinks img {
   z-index: -1;
-  height: 28px;
-  width: 28px;
+  height: 20px;
+  width: 20px;
 
 }
 video {
@@ -217,5 +220,27 @@ video {
 .nav-search {
   display: inline-block;
   align-content: center;
-
+  margin-left: 5em;
+  input {
+    background-color: rgba(21,21,21,1);;
+    color: rgba(144,144,144,1);
+    font-family: inherit;
+    border: none;
+    border-bottom: 2px solid white;
+    height: 30px;
+  }
+  input[type=text]:focus {
+    outline: none;
+    border-bottom: 2px solid pink;
+  }
+  input[type=image] {
+    display: inline-block;
+    position: absolute;
+    padding-top: 2px;
+    transition: .3s ease-in-out;
+  }
+  input[type=image]:hover {
+    transform: scale(1.2);
+    border: none;
+  }
 }
