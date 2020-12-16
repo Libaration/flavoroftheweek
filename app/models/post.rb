@@ -6,4 +6,8 @@ class Post < ApplicationRecord
   def self.create_from_repost(post, currentuser)
     create(song: post.song, user: currentuser, content: post.content, original_post: post)
   end
+
+  def song_hash=(song)
+    self.song = Song.find_or_create_by_spotify(song)
+  end
 end

@@ -20,9 +20,4 @@ class SongsController < ApplicationController
   def song_params
     params.require(:song).permit(:title,:artist)
   end
-
-  def search_track(track)
-    RSpotify.authenticate(ENV['CLIENT_ID'], ENV['CLIENT_SECRET'])
-    RSpotify::Track.search(track).first
-  end
 end
