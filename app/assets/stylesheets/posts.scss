@@ -78,9 +78,11 @@ li { margin: 0px 20px}
     opacity: 1;
   }
 }
+
 .songcontent {
   flex: 1 1 auto;
-  padding-top: 4em;
+  padding-top: 3em;
+  padding-right: 7em;
   overflow: hidden;
   font-weight: lighter;
   text-align: center;
@@ -185,4 +187,24 @@ video {
   color: white;
   font-size: 14px;
   backdrop-filter: saturate(1);
+  z-index: -1;
+}
+.contentquote {
+  display: inline-block;
+  font-style: italic;
+  z-index: -1;
+  font-size: 15px;
+}
+.posted_by {
+  z-index: -3;
+  position: absolute;
+  font-size: 12px;
+  opacity: .5;
+  color: pink;
+  img {
+    height: 64px;
+    width: 64px;
+    padding-left: 93em;
+    padding-top: 3em;
+  }
 }

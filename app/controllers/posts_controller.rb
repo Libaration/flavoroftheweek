@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  require 'rspotify'
+
   before_action :require_login
   def index
     params[:user_id] ? @posts = User.find(params[:user_id]).posts : @posts = Post.all

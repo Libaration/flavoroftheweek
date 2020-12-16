@@ -1,5 +1,4 @@
 class SongsController < ApplicationController
-  require 'rspotify'
 
   def new
     @song = Song.new
