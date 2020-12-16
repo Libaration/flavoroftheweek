@@ -1,6 +1,12 @@
 var body = document.getElementById('songpartial')
+var textbox_title = document.getElementById('_song_title')
+var textbox_artist = document.getElementById('_song_artist')
+var textbox_message = document.getElementById('post_content')
 $(function() {
    $("#songpartial").hide().html("<%= j render partial: "songs", locals: {post: @post} %>" + body.innerHTML).fadeIn();
 });
+textbox_artist.value = ''
+textbox_title.value = ''
+textbox_message.value = ''
 //var body = document.getElementById('songpartial')
 //body.innerHTML = "<%= j render partial: "songs", locals: {post: @post} %>" + body.innerHTML
