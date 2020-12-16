@@ -9,7 +9,7 @@
         <div class="greeting">Welcome <%= current_user.name %>, What are you listening to?</div>
       </div>
     </div>
-    <%= render partial: "songs", collection: @posts, :as => :post %>
+    <%= render partial: "songs", collection: @posts.order(created_at: :desc), :as => :post %>
   </div>
 
 </div>

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :require_login
   def index
-    @posts = Post.all.reverse
+    params[:user_id] ? @posts = User.find(params[:user_id]).posts : @posts = Post.all
   end
   def repost
     @post = Post.find(params[:id])
