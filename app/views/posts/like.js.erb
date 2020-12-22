@@ -1,0 +1,12 @@
+if (document.getElementById('post_<%= @post.id %>_loveicon').getAttribute('src') === '<%= asset_path("dislike.png") %>') {
+    $("#post_<%= @post.id %>_loveicon").slideToggle(100, function(){
+        $("#post_<%= @post.id %>_loveicon").slideToggle( "slow")
+        $("#post_<%= @post.id %>_loveicon").attr("src", "<%= asset_path("love.png") %>")
+    });
+}
+else {
+    $("#post_<%= @post.id %>_loveicon").slideToggle(100, function(){
+        $("#post_<%= @post.id %>_loveicon").slideToggle( "slow")
+        $("#post_<%= @post.id %>_loveicon").attr("src", "<%= asset_path("dislike.png") %>")
+    });
+}

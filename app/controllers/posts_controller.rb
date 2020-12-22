@@ -42,7 +42,12 @@ class PostsController < ApplicationController
   end
 
   def like
+    @post = Post.find(params[:id])
+    @post.like_or_dislike(current_user)
 
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
@@ -54,6 +59,6 @@ class PostsController < ApplicationController
     redirect_to login_path unless session.include? :user_id
   end
   def current_user
-    User.find(session[:user_id])
+    @current_user ||= User.find_by(id: session[:user_id])
   end
 end

@@ -12,4 +12,17 @@ class Post < ApplicationRecord
   def song_hash=(song)
     self.song = Song.find_or_create_by_spotify(song)
   end
+
+  def like_or_dislike(user)
+      post =  self.likes.where(user_id: user).first
+
+      if post.nil?
+          self.likes.where(user_id: user).first_or_create do |p|
+          p.liked = true
+          p.post_id = self
+          end
+          else
+            post.liked == true ? post.update(liked: false) : post.update(liked: true)
+      end
+  end
 end
