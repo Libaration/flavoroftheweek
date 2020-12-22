@@ -15,6 +15,20 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = PostComment.find(params[:id])
+    respond_to do |format|
+      if @comment.destroy
+        format.js
+      else
+        format.html {redirect_to post_comments_path(@post)}
+      end
+    end
+  end
+
+  private
+
+
   def comment_params
     params.require(:post_comment).permit(:message, :post_id, :user_id)
   end

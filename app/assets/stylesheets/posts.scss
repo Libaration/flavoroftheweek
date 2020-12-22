@@ -265,6 +265,7 @@ video {
   overflow: auto;
   display: block;
 }
+
 .comment_name {
   padding-top: 1em;
 }
@@ -288,14 +289,16 @@ video {
 }
 .new_comment {
   padding-bottom: 1em;
+  opacity: .8;
   input#create_comment {
-    border: none;
     border-bottom: none;
     padding-left: 1em;
     position: absolute;
     height: 38px;
     width: 38px;
+    border: 0;
   }
+  input#create_comment:focus { outline:0 !important; }
   input {
     background-color: rgba(21,21,21,0.1);;
     color: rgba(144,144,144,1);
@@ -308,5 +311,16 @@ video {
   input[type=text]:focus {
     outline: none;
     border-bottom: 2px solid pink;
+  }
+}
+
+.deletecomment {
+  padding-left: 53em;
+  display: inline-block;
+  position: absolute;
+padding-top: 0.2em;
+  opacity: .3;
+  img {
+    height: 20px
   }
 }
