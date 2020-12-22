@@ -1,6 +1,12 @@
 <div id="songpartial">
   <%= render partial: "posts/songs", locals: {post: @post} %>
 </div>
+
+
 <div id="commentspartial">
   <%= render partial: "comments", locals: {comments: @post.comments} %>
+</div>
+
+<div class="new_comment">
+
 </div>
