@@ -1,9 +1,10 @@
 <% comments.each do |comment| %>
-  <% binding.pry %>
+  <% unless comment.message.blank? %>
   <div class="comment_by">
     <div class="comment_name"> Posted by: <%= comment.user.name %></div> <%= profile_picture_or_default(comment.user) %>
   </div>
   <div class="comment_row">
     <%= comment.message %>
   </div>
+    <% end %>
 <% end %>

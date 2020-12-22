@@ -2,11 +2,13 @@
   <%= render partial: "posts/songs", locals: {post: @post} %>
 </div>
 
+<div class="new_comment">
+  <%= form_for @post.comments.build do |f| %>
+    <%= f.text_field :message %>
+    <%= f.submit %>
+  <% end %>
+</div>
 
 <div id="commentspartial">
   <%= render partial: "comments", locals: {comments: @post.comments} %>
-</div>
-
-<div class="new_comment">
-
 </div>
