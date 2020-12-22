@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:show, :index]
   end
   resources :posts do
-    resources :comments
+    resources :comments, only: [:create, :index, :destroy]
   end
   root 'static#home'
   get '/signup', to: 'users#new'
@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/auth/spotify/callback' => 'sessions#create'
   post '/posts/:id/repost' => 'posts#repost', as: 'repost'
+  post '/posts/:id/like' => 'posts#like', as: 'like'
 end
