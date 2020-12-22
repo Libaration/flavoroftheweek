@@ -1,4 +1,6 @@
 var body = document.getElementById('songpartial')
 $(function() {
-    $("#songpartial").hide().html("<%= j render partial: "songs", locals: {post: @post} %>" + body.innerHTML).fadeIn();
+    $("#songpartial").html("<%= j render partial: "songs", locals: {post: @post} %>" + body.innerHTML);
+    $("#post_<%=@post.id%>" ).hide();
+    $("#post_<%=@post.id%>" ).slideDown();
 });

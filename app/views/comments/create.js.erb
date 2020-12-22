@@ -1,0 +1,7 @@
+var textbox_message = document.getElementById('post_comment_message')
+$('.new_post_comment').bind('ajax:success', function() {
+    $("#commentspartial").html("<%= j render partial: "comments",locals: {comments: @post.comments.order(created_at: :desc)} %>")
+    $("#comment_<%=@comment.id%>" ).hide();
+    $("#comment_<%=@comment.id%>" ).slideDown();
+});
+textbox_message.value = ''

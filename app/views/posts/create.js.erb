@@ -3,7 +3,9 @@ var textbox_title = document.getElementById('_song_title')
 var textbox_artist = document.getElementById('_song_artist')
 var textbox_message = document.getElementById('post_content')
 $(function() {
-   $("#songpartial").hide().html("<%= j render partial: "songs", locals: {post: @post} %>" + body.innerHTML).fadeIn();
+   $("#songpartial").html("<%= j render partial: "songs", locals: {post: @post} %>" + body.innerHTML);
+    $("#post_<%=@post.id%>" ).hide();
+    $("#post_<%=@post.id%>" ).slideDown();
 });
 textbox_artist.value = ''
 textbox_title.value = ''

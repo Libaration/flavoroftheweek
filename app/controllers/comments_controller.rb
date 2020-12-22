@@ -5,8 +5,14 @@ class CommentsController < ApplicationController
   end
   def create
     @post = Post.find(params[:post_id])
-    @post.comments.create(comment_params.merge(user: current_user))
-    redirect_to post_comments_path(@post)
+    @comment = @post.comments.new(comment_params.merge(user: current_user))
+    respond_to do |format|
+      if @comment.save
+        format.js
+      else
+        format.html {redirect_to post_comments_path(@post)}
+      end
+    end
   end
 
   def comment_params

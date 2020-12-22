@@ -1,4 +1,4 @@
 $('.delete_post').bind('ajax:success', function() {
-    $(this).closest('.song_row').animate({paddingLeft: '1500px'});
-    $(this).closest('.song_row').fadeOut("fast");
+    $("#post_<%=@post.id%>").animate({paddingLeft: '1500px'});
+    $("#post_<%=@post.id%>").fadeOut("fast");
 });

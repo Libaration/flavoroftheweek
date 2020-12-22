@@ -3,7 +3,7 @@
 </div>
 
 <div class="new_comment">
-  <%= form_for @post.comments.build do |f| %>
+  <%= form_for @post.comments.build, remote: true do |f| %>
     <%= f.hidden_field :post_id %>
     <%= f.text_field :message %>
     <%= f.submit %>
