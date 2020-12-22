@@ -1,0 +1,8 @@
+<% comments.each do |comment| %>
+  <div class="comment_by">
+    <div class="comment_name"> Posted by: <%= comment.user.name %></div> <%= profile_picture_or_default(comment.user) %>
+  </div>
+  <div class="comment_row">
+    <%= comment.content %>
+  </div>
+<% end %>

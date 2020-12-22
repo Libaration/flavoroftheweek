@@ -2,5 +2,5 @@
   <%= render partial: "posts/songs", locals: {post: @post} %>
 </div>
 <div id="commentspartial">
-  these will be comment
+  <%= render partial: "comments", locals: {comments: @post.comments} %>
 </div>

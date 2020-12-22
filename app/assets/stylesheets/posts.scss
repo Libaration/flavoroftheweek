@@ -244,3 +244,35 @@ video {
     border: none;
   }
 }
+.comment_row {
+  margin-bottom: 1em;
+  border-radius: 20px;
+  height: auto;
+  backdrop-filter: brightness(1.6);
+  opacity: 0.8;
+  transition: .3s ease-in-out;
+  padding: 2em;
+  overflow: auto;
+  display: block;
+}
+.comment_name {
+  padding-top: 1em;
+}
+
+.comment_by {
+  z-index: -3;
+  position: absolute;
+  font-size: 12px;
+  opacity: .5;
+  color: pink;
+  display: flex;
+  padding-top: 2em;
+  padding-left: 76em;
+  img {
+    height: 40px;
+    width: 40px;
+    padding-left: 1em;
+    flex: 1;
+    border-radius: 50%;
+  }
+}
