@@ -10,7 +10,9 @@ class UsersController < ApplicationController
       render :'users/new'
     end
   end
+  def index
 
+  end
   private
 
   def user_params

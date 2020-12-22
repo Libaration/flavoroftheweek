@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_secure_password
   validates :email, uniqueness: true
   validates_confirmation_of :password
+  has_many :post_comments
+  has_many :comments, through: :post_comments
 
   def self.find_or_create_from_spotify(auth)
     self.where(email: auth.info.email).first_or_create do |u|

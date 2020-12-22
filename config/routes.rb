@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :users do
     resources :posts, only: [:show, :index]
   end
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   root 'static#home'
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
