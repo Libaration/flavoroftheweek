@@ -1,6 +1,8 @@
 <div class="song_row">
 <div class="likebtn">
+  <div id="count">( <%= post.comments.count %> )</div>
     <%= image_tag('love.png') %>
+  <%= link_to image_tag('comments.png', id: 'commentsicon'), post_comments_path(post) %>
   </div>
 <div class="posted_by">
   <%= profile_picture_or_default(post.user) %> Shared by: <%= post.user.name %>
