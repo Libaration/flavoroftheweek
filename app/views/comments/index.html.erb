@@ -5,8 +5,8 @@
 <div class="new_comment">
   <%= form_for @post.comments.build, remote: true do |f| %>
     <%= f.hidden_field :post_id %>
-    <%= f.text_field :message %>
-    <%= f.submit %>
+    <%= f.text_field :message,value: "🔥🔥🔥💯", autocomplete: :off %>
+    <%= image_submit_tag("create_comment.png", id: 'create_comment') %>
   <% end %>
 </div>
 

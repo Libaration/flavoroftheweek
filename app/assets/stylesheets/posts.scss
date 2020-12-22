@@ -288,4 +288,25 @@ video {
 }
 .new_comment {
   padding-bottom: 1em;
+  input#create_comment {
+    border: none;
+    border-bottom: none;
+    padding-left: 1em;
+    position: absolute;
+    height: 38px;
+    width: 38px;
+  }
+  input {
+    background-color: rgba(21,21,21,0.1);;
+    color: rgba(144,144,144,1);
+    font-family: inherit;
+    border: none;
+    border-bottom: 2px solid white;
+    height: 30px;
+    width: 82em;
+  }
+  input[type=text]:focus {
+    outline: none;
+    border-bottom: 2px solid pink;
+  }
 }
