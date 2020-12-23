@@ -11,7 +11,7 @@ class SongsController < ApplicationController
   end
 
   def show
-    @song = Song.find(params[:id])
+    @song = Song.friendly.find(params[:id])
   end
 
   private

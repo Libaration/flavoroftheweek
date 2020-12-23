@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_22_141845) do
+ActiveRecord::Schema.define(version: 2020_12_23_223610) do
 
   create_table "likes", force: :cascade do |t|
     t.boolean "liked"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 2020_12_22_141845) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "uri"
     t.string "image"
+    t.string "slug"
+    t.index ["slug"], name: "index_songs_on_slug", unique: true
   end
 
   create_table "user_songs", force: :cascade do |t|

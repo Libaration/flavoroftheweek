@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.1'
 gem 'bcrypt'
 gem 'dotenv-rails'
+gem 'friendly_id', '~> 5.4.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'httparty'
 gem 'miro'

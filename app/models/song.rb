@@ -1,4 +1,6 @@
 class Song < ApplicationRecord
+  extend FriendlyId
+  friendly_id :artist_title, use: :slugged
   has_many :posts
   has_many :users, through: :posts
   def self.find_or_create_by_spotify(song)
@@ -8,5 +10,8 @@ class Song < ApplicationRecord
       s.uri = song.id
       s.image = song.album.images.first["url"]
     end
+  end
+  def artist_title
+    "#{artist} #{title}"
   end
 end
