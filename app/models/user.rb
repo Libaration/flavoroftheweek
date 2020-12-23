@@ -6,7 +6,9 @@ class User < ApplicationRecord
   validates_confirmation_of :password
   has_many :post_comments
   has_many :commented_posts, through: :post_comments, source: :post
-  has_many :liked_posts, -> {where(liked: true)}, class_name: "Like", foreign_key: :user_id
+  has_many :likes, -> {where(liked: true)}
+  has_many :liked_posts,  through: :likes, source: :post
+  #has_many :liked_posts, -> {where(liked: true)}, class_name: "Like", foreign_key: :user_id, dependent: :destroy
 
   def self.find_or_create_from_spotify(auth)
     self.where(email: auth.info.email).first_or_create do |u|

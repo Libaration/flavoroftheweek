@@ -3,7 +3,7 @@
   <div class="nav-search"><%= render partial: 'shared/song_form', locals: {post: Post.new} %></div>
   <div class="navlinks">
     <ul>
-      <li>Profile</li>
+      <li><%= link_to 'Profile', user_path(current_user) %></li>
       <li>Users</li>
       <li><%= link_to 'Feed', posts_path %></li>
     </ul>

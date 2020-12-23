@@ -1,0 +1,9 @@
+<div class="profile_container">
+  <div class="profile_picture">
+    <%= profile_picture_or_default(current_user) %>
+    <div class="greeting">Welcome <%= current_user.name %>, These are your flavors for the week!</div>
+  </div>
+</div>
+<div id="songpartial">
+  <%= render partial: "posts/songs", collection: @posts.order(created_at: :desc), :as => :post %>
+</div>
