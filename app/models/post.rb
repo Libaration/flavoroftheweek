@@ -4,6 +4,8 @@ class Post < ApplicationRecord
   belongs_to :original_post, class_name: 'Post', foreign_key: 'original_id', optional: true
   has_many :comments, class_name: "PostComment", foreign_key: :post_id
   has_many :likes, -> {where(liked: true)}
+  has_many :post_comments
+  has_many :commenters, -> { distinct }, through: :post_comments, source: :user
 
   def self.create_from_repost(post, currentuser)
     create(song: post.song, user: currentuser, content: post.content, original_post: post)
