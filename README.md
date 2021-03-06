@@ -3,6 +3,9 @@ Rails application that uses Spotify API to allow users to share their current fa
 Users can hover over individual posts/songs to hear a preview of it, repost it to their own page or search for their current favorite song.
 Songs can be accessed by an easy to remember slug for easy sharing across platforms or to friends.
 
+![download](https://user-images.githubusercontent.com/11550216/110198457-9f347300-7e20-11eb-971c-adaea6d2e3c6.gif)
+
+
 
 ##### Prerequisites
 
